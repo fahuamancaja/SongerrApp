@@ -1,0 +1,59 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongerrApp.MainPage"
+             BackgroundColor="Black"
+             >
+    <!-- Set the page background color to grey -->
+    <ContentPage.Resources>
+        <Style x:Key="DisabledButtonStyle" TargetType="Button">
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                    <Setter Property="BackgroundColor" Value="Gray" />
+                    <Setter Property="TextColor" Value="LightGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <FlexLayout
+            Direction="Column"
+            AlignItems="Center"
+            JustifyContent="Center">
+
+            <!-- UI elements with adjustments -->
+
+            <Label
+                x:Name="statusLabel"
+                Text=""
+                TextColor="White"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Margin="0"
+                LineBreakMode="NoWrap" />
+            <Entry 
+                x:Name="inputText" 
+                Placeholder="Enter text here" 
+                HeightRequest="50" 
+                WidthRequest="200" 
+                FontSize="Large" 
+                TextColor="White"/>
+            <!-- Set the FontSize for Entry -->
+            <Button   
+                x:Name="sendButton"
+                Style="{StaticResource DisabledButtonStyle}"
+                Clicked="OnSendClicked"   
+                Text="Send" FontSize="Large"   
+                WidthRequest="200"   
+                HeightRequest="50"   
+                BackgroundColor="Yellow"
+                BorderColor="White"
+                TextColor="Black"/>
+
+
+            <!-- Increase size of Button -->
+
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>
